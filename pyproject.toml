@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anki-tools"
+version = "0.1.0"
+description = "Small command-line utilities for working with Anki data"
+requires-python = ">=3.10"
+dependencies = [
+    "beautifulsoup4",
+    "requests",
+]
+
+[project.scripts]
+anki-clean-html = "anki_tools.clean_anki_html:cli"
+anki-scrape-simplified = "anki_tools.scrape_simplified:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
